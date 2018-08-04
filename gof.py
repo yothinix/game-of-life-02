@@ -18,7 +18,18 @@ def get_neighbors_of(cell):
     """
     Return the neighbors of cell.
     """
-    return 1
+    result = [
+        (cell[0], cell[1]-1),
+        (cell[0], cell[1]+1),
+        (cell[0]+1, cell[1]-1),
+        (cell[0]+1, cell[1]),
+        (cell[0]+1, cell[1]+1),
+        (cell[0]-1, cell[1]-1),
+        (cell[0]-1, cell[1]),
+        (cell[0]-1, cell[1]+1)
+    ]
+
+    return set(result)
 
 
 def advance(board):

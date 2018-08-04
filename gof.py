@@ -45,7 +45,7 @@ def rule_1(board, center, possible_neighbors):
 
 
 def rule_2(board, center, possible_neighbors):
-    if count_neighbors(board, possible_neighbors) == 2:
+    if count_neighbors(board, possible_neighbors) == 2 or count_neighbors(board, possible_neighbors) == 3:
         return board
     else:
         return board - {center}

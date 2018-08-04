@@ -32,13 +32,23 @@ def get_neighbors_of(cell):
     return set(result)
 
 
-def rule_1(board, center, possible_neighbors):
+def count_neighbors(board, possible_neighbors):
     neighbors = board & possible_neighbors
-    member = len(neighbors)
-    if member < 2:
+    return len(neighbors)
+
+
+def rule_1(board, center, possible_neighbors):
+    if count_neighbors(board, possible_neighbors) < 2:
         return board - {center}
     else:
         return board
+
+
+def rule_2(board, center, possible_neighbors):
+    if count_neighbors(board, possible_neighbors) == 2:
+        return board
+    else:
+        return board - {center}
 
 
 def advance(board):

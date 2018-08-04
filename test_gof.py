@@ -6,7 +6,9 @@ from gof import get_neighbors_of, rule_1
 class GameOfLifeTest(unittest.TestCase):
     def test_get_neighbors_of_cell_03_should_return_set(self):
         cell = (0, 3)
+
         result = get_neighbors_of(cell)
+
         expected = {
             (0, 2),
             (0, 4),
@@ -21,7 +23,9 @@ class GameOfLifeTest(unittest.TestCase):
 
     def test_get_neighbors_of_cell_14_should_return_set(self):
         cell = (1, 4)
+
         result = get_neighbors_of(cell)
+
         expected = {
             (0, 3),
             (0, 5),

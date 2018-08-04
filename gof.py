@@ -21,6 +21,15 @@ def get_neighbors_of(cell):
     return 1
 
 
+def rule_1(board, center, possible_neighbors):
+    neighbors = board & possible_neighbors
+    member = len(neighbors)
+    if member < 2:
+        return board - {center}
+    else:
+        return board
+
+
 def advance(board):
     """
     Advance the board one step and return it.
